@@ -5,7 +5,7 @@ export default function Appointments() {
 
 const [allAppointments, setallAppointments] = useState("") 
 useEffect(() => {
-axios.get("api/appointment")
+axios.get("https://beautysalonplus.herokuapp.com/api/appointment")
 .then(response => {
 setallAppointments(response.data)
            
@@ -16,7 +16,7 @@ function deleteappointment(event, id){
 console.log("data:" , id)
 axios({
 method:'delete',
-url:`api/appointment/delete/${id}`,
+url:`https://beautysalonplus.herokuapp.com/api/appointment/delete/${id}`,
 });
  }
 return (<>

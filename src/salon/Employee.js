@@ -39,7 +39,7 @@ export default function Employee() {
        console.log("data:" , a)
        axios({
         method: 'post',
-        url: 'api/employee/add',
+        url: 'https://beautysalonplus.herokuapp.com/api/employee/add',
         data: a
     });
 
@@ -57,7 +57,7 @@ export default function Employee() {
         console.log("data:" , delid)
         axios({
             method:'delete',
-            url:`api/employee/delete/${delid}`,
+            url:`https://beautysalonplus.herokuapp.com/api/employee/delete/${delid}`,
           });
  
      }
@@ -68,14 +68,14 @@ export default function Employee() {
         }
         axios({
             method: 'post',
-            url: `api/employee/service/${sel1}/${sel2}`,
+            url: `https://beautysalonplus.herokuapp.com/api/employee/service/${sel1}/${sel2}`,
             data: ""
         });
     
         console.log(a)
      }
      useEffect(() => {
-        axios.get("api/employee")
+        axios.get("https://beautysalonplus.herokuapp.com/api/employee")
             .then(response => {
                 console.log(response.data)
                 setEmployees(Array.from(response.data))
@@ -83,7 +83,7 @@ export default function Employee() {
         return () => { }
     }, [])
     useEffect(() => {
-        axios.get("api/service")
+        axios.get("https://beautysalonplus.herokuapp.com/api/service")
             .then(response => {
                 console.log(response.data)
                 setServices(response.data)

@@ -16,7 +16,7 @@ export default function Login() {
         //Send Api request to validate data and get token
         axios({
             method: "get",
-            url: 'api/customer/login',
+            url: 'https://beautysalonplus.herokuapp.com/api/customer/login',
             params: { email: email , password: password}
         }).then((response)=> {alert(response.data)
             if(response.data=="Customer authenticated"){

@@ -56,7 +56,7 @@ export default function Customer() {
         password: password
     }
     useEffect(() => {
-        axios.get("api/customer")
+        axios.get("https://beautysalonplus.herokuapp.com/api/customer")
             .then(response => {
                 console.log(response.data)
                 setMyCustemor(response.data[0])
@@ -67,7 +67,7 @@ export default function Customer() {
         console.log(nuwCustomer)
         axios({
             method: 'post',
-            url: 'api/customer/add',
+            url: 'https://beautysalonplus.herokuapp.com/api/customer/add',
             data: nuwCustomer
         });
     }
@@ -75,7 +75,7 @@ export default function Customer() {
        console.log("del "+del)
         axios({
           method:'delete',
-          url:`/api/customer/delete/${del}`,
+          url:`https://beautysalonplus.herokuapp.com//api/customer/delete/${del}`,
         });
     }
 

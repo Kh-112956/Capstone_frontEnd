@@ -44,7 +44,7 @@ export default function Service() {
         photo: img
     }
     useEffect(() => {
-        axios.get("api/service")
+        axios.get("https://beautysalonplus.herokuapp.com/api/service")
         .then(response => {
             console.log(response.data)
         }) 
@@ -54,7 +54,7 @@ export default function Service() {
         console.log(nuwService)
         axios({
             method: 'post',
-            url: 'api/service/add',
+            url: 'https://beautysalonplus.herokuapp.com/api/service/add',
             data: nuwService
         });
 
@@ -65,7 +65,7 @@ export default function Service() {
         console.log("del",del)
          axios({
            method:'delete',
-           url:`/api/service/delete/${del}`,
+           url:`https://beautysalonplus.herokuapp.com//api/service/delete/${del}`,
          });} 
           
 

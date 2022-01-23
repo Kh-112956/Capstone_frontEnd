@@ -32,14 +32,14 @@ export default function Oneservice() {
         }
         axios({
             method: 'post',
-            url: `../api/appointment/add`,
+            url: `https://beautysalonplus.herokuapp.com/../api/appointment/add`,
             data: appointment
         });
         console.log(appointment)
         navigate("/Appointment");
     }
     useEffect(() => {
-        axios.get(`../api/employee/service/${params.id}`)
+        axios.get(`https://beautysalonplus.herokuapp.com/../api/employee/service/${params.id}`)
         .then(response => {
             setEmployees(response.data)
             console.log(response.data)
@@ -47,7 +47,7 @@ export default function Oneservice() {
        
     },[] )
     useEffect(() => {
-        axios.get(`../api/service/${params.id}`)
+        axios.get(`https://beautysalonplus.herokuapp.com/../api/service/${params.id}`)
         .then(response => {
             setService(response.data)
            
@@ -58,7 +58,7 @@ export default function Oneservice() {
     useEffect(() => {
         let email = localStorage.getItem('email')
         setEmail(email)
-        axios.get(`../api/customer/getCustomerbyemail/${email}`)
+        axios.get(`https://beautysalonplus.herokuapp.com/../api/customer/getCustomerbyemail/${email}`)
         .then(response => {
             
            setCustomer(response.data)

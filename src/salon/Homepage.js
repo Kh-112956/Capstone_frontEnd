@@ -15,7 +15,7 @@ export default function Homepage() {
         window.history.replaceState(null, '', '');
       }, []);
     useEffect(() => {
-        axios.get("api/service")
+        axios.get("https://beautysalonplus.herokuapp.com/api/service")
         .then(response => {
             setAllServices(response.data)
            
@@ -27,7 +27,7 @@ export default function Homepage() {
         console.log("del",del)
          axios({
            method:'delete',
-           url:`/api/service/delete/${del}`,
+           url:`https://beautysalonplus.herokuapp.com//api/service/delete/${del}`,
          });} 
         function gotoservice (event,id){
             event.preventDefault();
